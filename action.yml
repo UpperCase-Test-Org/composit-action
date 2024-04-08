@@ -1,0 +1,8 @@
+name: "Hello World"
+description: "Greet someone"
+runs:
+  using: "composite"
+  steps:
+    - name: Run hello world
+      run: ${{ github.action_path }}/say-hello.sh
+      shell: bash
