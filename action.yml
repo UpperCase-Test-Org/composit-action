@@ -1,11 +1,16 @@
 name: "Hello World"
 description: "Greet someone"
+inputs:
+  docker_actions_path:
+    description: 'paths'
+    required: true
+    default: 'World'
 runs:
   using: "composite"
   steps:
     - name: Run hello world
       run: |
         echo "in composit action ${{ runner.temp }}"
-        echo "in composit action ${{ github.workspace }}"
+        echo "in composit action ${{ inputs.docker_actions_path }}"
         ../_actions/${{ github.repository }}/say-hello.sh
       shell: bash
