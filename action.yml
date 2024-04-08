@@ -4,5 +4,5 @@ runs:
   using: "composite"
   steps:
     - name: Run hello world
-      run: ${{ github.action_path }}/say-hello.sh
+      run: say-hello.sh
       shell: bash
