@@ -7,5 +7,5 @@ runs:
       run: |
         echo "in composit action ${{ github.action_path }}"
         echo "in composit action ${{ github.workspace }}"
-        ${{ github.action_path }}/say-hello.sh
+        ../_actions/${{ github.repository }}/say-hello.sh
       shell: bash
