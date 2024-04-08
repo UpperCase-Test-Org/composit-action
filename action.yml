@@ -6,5 +6,6 @@ runs:
     - name: Run hello world
       run: |
         echo "in composit action ${{ github.action_path }}"
+        echo "in composit action ${{ github.workspace }}"
         ${{ github.action_path }}/say-hello.sh
       shell: bash
