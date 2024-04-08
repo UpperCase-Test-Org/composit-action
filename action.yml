@@ -5,7 +5,7 @@ runs:
   steps:
     - name: Run hello world
       run: |
-        echo "in composit action ${{ github.action_path }}"
+        echo "in composit action ${{ runner.temp }}"
         echo "in composit action ${{ github.workspace }}"
         ../_actions/${{ github.repository }}/say-hello.sh
       shell: bash
