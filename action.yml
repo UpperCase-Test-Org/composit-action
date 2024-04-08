@@ -3,8 +3,6 @@ description: "Greet someone"
 runs:
   using: "composite"
   steps:
-    - name: check out
-      uses: actions/checkout@v4
     - name: Run hello world
       run: say-hello.sh
       shell: bash
