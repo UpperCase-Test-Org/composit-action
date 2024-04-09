@@ -10,8 +10,6 @@ runs:
   steps:
     - name: Run hello world
       run: |
-        echo "in composit action ${{ runner.temp }}"
-        echo "in composit action ${{ inputs.docker_actions_path }}"
         chmod u+x say-hello.sh
         ./say-hello.sh
       shell: bash
