@@ -12,5 +12,5 @@ runs:
       run: |
         echo "in composit action ${{ runner.temp }}"
         echo "in composit action ${{ inputs.docker_actions_path }}"
-        ../_actions/${{ github.repository }}/say-hello.sh
+        ./say-hello.sh
       shell: bash
