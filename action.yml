@@ -9,7 +9,5 @@ runs:
   using: "composite"
   steps:
     - name: Run hello world
-      run: |
-        chmod u+x say-hello.sh
-        ./say-hello.sh
+      run: ./say-hello.sh
       shell: bash
