@@ -10,6 +10,5 @@ runs:
   steps:
     - name: Run hello world
       run: |
-        chmod u+x ./say-hello.sh
-        ./say-hello.sh
+        ${{ inputs.docker_actions_pat }}/say-hello.sh
       shell: bash
