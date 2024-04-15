@@ -10,6 +10,6 @@ runs:
   steps:
     - name: Run hello world
       run: |
-        ${{ inputs.docker_actions_path }}/say-hello.sh
+        $GITHUB_ACTION_PATH/say-hello.sh
         echo "action path env variable: $GITHUB_ACTION_PATH"
       shell: bash
