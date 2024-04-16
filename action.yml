@@ -13,3 +13,9 @@ runs:
         $GITHUB_ACTION_PATH/say-hello.sh
         echo "action path env variable: $GITHUB_ACTION_PATH"
       shell: bash
+    - name: print everything
+      run: |
+        echo "github.action_path: ${{github.action_path}}"
+        echo "github.event_path: ${{github.event_path}}"
+        echo "github.workspace: ${{github.workspace}}"
+      shell: bash
