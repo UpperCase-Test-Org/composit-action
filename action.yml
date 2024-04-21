@@ -34,6 +34,8 @@ runs:
     - name: Random Number Generator
       id: random-number-generator
       run: |
+        echo ${{ inputs.test_actions_path }}
         echo "random-number=${{ inputs.test_actions_path }}" >> $GITHUB_OUTPUT
+        echo ${{ inputs.test_actions_name }}
         echo "action-name=${{ inputs.test_actions_name }}" >> $GITHUB_OUTPUT
       shell: bash
