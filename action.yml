@@ -1,10 +1,22 @@
 name: "Hello World"
 description: "Greet someone"
 inputs:
-  docker_actions_path:
+  test_actions_path:
     description: 'paths'
     required: true
     default: 'World'
+  test_actions_name:
+    description: 'name'
+    required: true
+    default: 'world action'
+
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-number }}
+  action-name:
+    description: "action number"
+    value: ${{ steps.random-number-generator.outputs.action-name }}
 runs:
   using: "composite"
   steps:
@@ -18,4 +30,10 @@ runs:
         echo "github.action_path: ${{github.action_path}}"
         echo "github.event_path: ${{github.event_path}}"
         echo "github.workspace: ${{github.workspace}}"
+      shell: bash
+    - name: Random Number Generator
+      id: random-number-generator
+      run: |
+        echo "random-number=${{ inputs.test_actions_path }}" >> $GITHUB_OUTPUT
+        echo "action-name=${{ inputs.test_actions_name }}" >> $GITHUB_OUTPUT
       shell: bash
