@@ -23,7 +23,7 @@ runs:
     - name: Run hello world
       run: |
         $GITHUB_ACTION_PATH/say-hello.sh
-        echo "action path env variable: $GITHUB_ACTION_PATH"
+        echo "action path env variable GITHUB_ACTION_PATH is: $GITHUB_ACTION_PATH"
       shell: bash
     - name: print everything
       run: |
