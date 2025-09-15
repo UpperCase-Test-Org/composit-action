@@ -7,7 +7,7 @@ runs:
       run: |
         $GITHUB_ACTION_PATH/say-hello.sh
         echo "action path env variable GITHUB_ACTION_PATH is: $GITHUB_ACTION_PATH"
-        sleep 5m
+        # sleep 5m
       shell: bash
     - name: call local actions
       uses: ${{github.action_path}}/.github/actions/hello-world
