@@ -7,10 +7,12 @@ runs:
       run: |
         $GITHUB_ACTION_PATH/say-hello.sh
         echo "action path env variable GITHUB_ACTION_PATH is: $GITHUB_ACTION_PATH"
+        mkdir .actions/
+        ln -s "${{github.action_path}}/../get-build-number" .actions/get-build-number
         # sleep 5m
       shell: bash
     - name: call local actions
-      uses: ${{github.action_path}}/.github/actions/hello-world
+      uses: ./.actions/get-build-number
     - name: print everything
       run: |
         echo "github.action_path: ${{github.action_path}}"
