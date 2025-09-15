@@ -10,7 +10,7 @@ runs:
         sleep 5m
       shell: bash
     - name: call local actions
-      uses: ./.github/actions/hello-world
+      uses: ${{github.action_path}}/.github/actions/hello-world
     - name: print everything
       run: |
         echo "github.action_path: ${{github.action_path}}"
