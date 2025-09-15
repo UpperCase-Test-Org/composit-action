@@ -1,14 +1,5 @@
 name: "Hello World"
 description: "Greet someone"
-
-
-outputs:
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
-  action-name:
-    description: "action number"
-    value: ${{ steps.random-number-generator.outputs.action-name }}
 runs:
   using: "composite"
   steps:
