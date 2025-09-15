@@ -25,6 +25,8 @@ runs:
         $GITHUB_ACTION_PATH/say-hello.sh
         echo "action path env variable GITHUB_ACTION_PATH is: $GITHUB_ACTION_PATH"
       shell: bash
+    - name: call local actions
+      uses: ./.github/actions/hello-world
     - name: print everything
       run: |
         echo "github.action_path: ${{github.action_path}}"
