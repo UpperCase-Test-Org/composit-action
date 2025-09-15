@@ -1,14 +1,6 @@
 name: "Hello World"
 description: "Greet someone"
-inputs:
-  test_actions_path:
-    description: 'paths'
-    required: true
-    default: 'World'
-  test_actions_name:
-    description: 'name'
-    required: true
-    default: 'world action'
+
 
 outputs:
   random-number:
@@ -32,12 +24,4 @@ runs:
         echo "github.action_path: ${{github.action_path}}"
         echo "github.event_path: ${{github.event_path}}"
         echo "github.workspace: ${{github.workspace}}"
-      shell: bash
-    - name: Random Number Generator
-      id: random-number-generator
-      run: |
-        echo ${{ inputs.test_actions_path }}
-        echo "random-number=${{ inputs.test_actions_path }}" >> $GITHUB_OUTPUT
-        echo ${{ inputs.test_actions_name }}
-        echo "action-name=${{ inputs.test_actions_name }}" >> $GITHUB_OUTPUT
       shell: bash
