@@ -3,5 +3,5 @@ description: "A simple local action that prints Hello, World!"
 runs:
   using: "composite"
   steps:
-    - run: ./entrypoint.sh
+    - run: echo "hello you!!!"
       shell: bash
