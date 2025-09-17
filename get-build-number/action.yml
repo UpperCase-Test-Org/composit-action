@@ -1,10 +1,15 @@
 name: "Hello World"
 description: "A simple local action that prints Hello, World!"
+inputs:
+  SCRIPT_PATH:
+    description: "script path"
+    required: true
+    type: string
 runs:
   using: "composite"
   steps:
     - run: |
         echo "In get-build-number ${GITHUB_ACTION_PATH}"
         echo "In get-build-number github.action_path: ${{github.action_path}}"
-        ${{github.action_path}}/entrypoint.sh
+        ${{ inputs.SCRIPT_PATH }}/entrypoint.sh
       shell: bash
