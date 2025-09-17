@@ -17,7 +17,7 @@ runs:
         echo "In build-maven action, github.action_path: ${{github.action_path}}"
         mkdir .actions/
         host_action_path=`dirname $GITHUB_ACTION_PATH`
-        echo "host_action_path=$host_action_path" >> GITHUB_OUTPUT
+        echo "host_action_path=$host_action_path" >> $GITHUB_OUTPUT
         ln -s "${{github.action_path}}/../get-build-number" .actions/get-build-number
         # sleep 5m
       shell: bash
