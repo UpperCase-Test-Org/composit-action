@@ -14,10 +14,12 @@ runs:
         $GITHUB_ACTION_PATH/say-hello.sh
         echo "In build-maven action, action path env variable GITHUB_ACTION_PATH is: $GITHUB_ACTION_PATH"
         echo "In build-maven action, github.action_path: ${{github.action_path}}"
-        mkdir .actions/
+        # mkdir .actions/
+        host_action_path=`basename ${{github.action_path}}`
+        echo $host_action_path
         ln -s "${{github.action_path}}/../get-build-number/" .actions/get-build-number/
         # sleep 5m
       shell: bash
     - name: call local actions
-      uses: ${{github.workspace}}/.actions/get-build-number
+      uses: ./.actions/get-build-number
     
