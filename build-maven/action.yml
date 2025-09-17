@@ -3,20 +3,21 @@ description: "Greet someone"
 runs:
   using: "composite"
   steps:
-    - name: Run hello world
-      run: |
-        $GITHUB_ACTION_PATH/say-hello.sh
-        echo "In build-maven action, action path env variable GITHUB_ACTION_PATH is: $GITHUB_ACTION_PATH"
-        echo "In build-maven action, github.action_path: ${{github.action_path}}"
-        mkdir .actions/
-        ln -s "${{github.action_path}}/../get-build-number/*" .actions/get-build-number/*
-        # sleep 5m
-      shell: bash
-    - name: call local actions
-      uses: ./.actions/get-build-number
     - name: print everything
       run: |
         echo "github.action_path: ${{github.action_path}}"
         echo "github.event_path: ${{github.event_path}}"
         echo "github.workspace: ${{github.workspace}}"
       shell: bash
+    - name: Run hello world
+      run: |
+        $GITHUB_ACTION_PATH/say-hello.sh
+        echo "In build-maven action, action path env variable GITHUB_ACTION_PATH is: $GITHUB_ACTION_PATH"
+        echo "In build-maven action, github.action_path: ${{github.action_path}}"
+        mkdir .actions/
+        ln -s "${{github.action_path}}/../get-build-number/" .actions/get-build-number/
+        # sleep 5m
+      shell: bash
+    - name: call local actions
+      uses: ${{github.workspace}}/.actions/get-build-number
+    
