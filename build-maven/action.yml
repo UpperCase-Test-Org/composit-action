@@ -15,9 +15,9 @@ runs:
         echo "In build-maven action, action path env variable GITHUB_ACTION_PATH is: $GITHUB_ACTION_PATH"
         echo "In build-maven action, github.action_path: ${{github.action_path}}"
         # mkdir .actions/
-        host_action_path=`basename ${{github.action_path}}`
+        host_action_path=`dirname ${{github.action_path}}`
         echo $host_action_path
-        ln -s "${{github.action_path}}/../get-build-number/" .actions/get-build-number/
+        ln -s "${{github.action_path}}/../get-build-number" .actions/get-build-number
         # sleep 5m
       shell: bash
     - name: call local actions
