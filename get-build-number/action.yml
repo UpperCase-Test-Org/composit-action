@@ -11,5 +11,6 @@ runs:
     - run: |
         echo "In get-build-number ${GITHUB_ACTION_PATH}"
         echo "In get-build-number github.action_path: ${{github.action_path}}"
-        ${{ inputs.SCRIPT_PATH }}/entrypoint.sh
+        path-basename=`basename ${{github.action_path}}`
+        ${{ inputs.SCRIPT_PATH }}/$path-basename/entrypoint.sh
       shell: bash
