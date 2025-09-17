@@ -9,8 +9,7 @@ runs:
   using: "composite"
   steps:
     - run: |
-        echo "In get-build-number ${GITHUB_ACTION_PATH}"
-        echo "In get-build-number github.action_path: ${{github.action_path}}"
-        path-basename=`basename ${GITHUB_ACTION_PATH}`
-        ${{ inputs.SCRIPT_PATH }}/$path-basename/entrypoint.sh
+        echo "In get-build-number "
+        path_basename="$(basename ${GITHUB_ACTION_PATH})"
+        ${{ inputs.SCRIPT_PATH }}/${path_basename}/entrypoint.sh
       shell: bash
